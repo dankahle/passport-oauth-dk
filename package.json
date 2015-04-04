@@ -1,0 +1,39 @@
+{
+  "name": "node-bootstrap3-template",
+  "version": "0.0.1",
+  "description": "A template for express, NodeJS and twitter bootstrap 3",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mjhea0/node-bootstrap3-template.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "template",
+    "twitter",
+    "bootstrap",
+    "bootstrap3"
+  ],
+  "author": "Michael Herman <michael@mherman.org>",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "",
+    "express": "",
+    "express-session": "",
+    "jade": "",
+    "mocha": "",
+    "mongoose": "",
+    "passport": "",
+    "passport-facebook": "",
+    "passport-github": "",
+    "passport-google": "",
+    "passport-twitter": "",
+    "phantom": "",
+    "should": ""
+  }
+}
