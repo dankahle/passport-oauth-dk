@@ -1,10 +1,10 @@
-var passport = require('passport')
-var FacebookStrategy = require('passport-facebook').Strategy;
-var TwitterStrategy = require('passport-twitter').Strategy;
-var GithubStrategy = require('passport-github').Strategy;
-var GoogleStrategy = require('passport-google').Strategy;
-var User = require('./user.js')
-var config = require('./oauth.js')
+var passport = require('passport'),
+  FacebookStrategy = require('passport-facebook').Strategy,
+  TwitterStrategy = require('passport-twitter').Strategy,
+  GithubStrategy = require('passport-github').Strategy,
+  GoogleStrategy = require('passport-google').Strategy,
+  User = require('./db.js').User,
+  config = require('./oauth.js')
 
 // config
 module.exports = passport.use(new FacebookStrategy({
@@ -21,7 +21,7 @@ module.exports = passport.use(new FacebookStrategy({
       } else {
         var user = new User({
           oauthID: profile.id,
-          name: profile.displayName,
+          fullName: profile.displayName,
           created: Date.now()
         });
         user.save(function (err) {
@@ -52,7 +52,7 @@ passport.use(new TwitterStrategy({
       } else {
         var user = new User({
           oauthID: profile.id,
-          name: profile.displayName,
+          fullName: profile.displayName,
           created: Date.now()
         });
         user.save(function (err) {
@@ -83,7 +83,7 @@ passport.use(new GithubStrategy({
       } else {
         var user = new User({
           oauthID: profile.id,
-          name: profile.displayName,
+          fullName: profile.displayName,
           created: Date.now()
         });
         user.save(function (err) {
@@ -113,7 +113,7 @@ passport.use(new GoogleStrategy({
       } else {
         var user = new User({
           oauthID: profile.id,
-          name: profile.displayName,
+          fullName: profile.displayName,
           created: Date.now()
         });
         user.save(function (err) {

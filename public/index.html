@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+   <meta charset="UTF-8">
+   <!--<meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
+   <title>angular</title>
+	<script src="bower_components/angular/angular.min.js"></script>
+   <style>
+       body {padding: 30px}
+   </style>
+</head>
+<body ng-controller="ctrl">
+<fieldset style="width:30%; float:right">
+    <legend>Settings</legend>
+    <form>
+    email: <input ng-model="user.email"> <span>{{msg}}</span><br>
+    <button type="submit" ng-click="saveSettings()">Save</button><br>
+    </form>
+</fieldset>
+welcome: {{user.fullName}}<br>
+<a href="/login/logout">logout</a>
+<div style="clear:both;padding-top:30px;"><br>
+{{user|json}}
+</div>
+<script>
+	var app = angular.module('app', []);
+	app.controller('ctrl', function($scope, $http){
+
+      $http.get('/api/user').then(function(resp) {
+         $scope.user = resp.data;
+      });
+
+      $scope.saveSettings = function() {
+          $http.post('/api/user', $scope.user).then(function() {
+              $scope.msg = 'saved'
+              setTimeout(function() {
+                  $scope.msg = '';
+                  $scope.$digest();
+              }, 1000)
+          })
+      }
+
+
+	})
+</script>
+</body>
+</html>
