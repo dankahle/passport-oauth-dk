@@ -12,15 +12,16 @@
     "api-error-handler": "*",
     "body-parser": "*",
     "debug": "*",
-    "express-domain-middleware": "*",
     "express": "*",
+    "express-domain-middleware": "*",
     "express-session": "*",
     "mongoose": "*",
     "passport": "*",
-    "passport-local-mongoose": "*",
     "passport-facebook": "*",
     "passport-github": "*",
     "passport-google": "*",
+    "passport-google-oauth": "^0.2.0",
+    "passport-local-mongoose": "*",
     "passport-twitter": "*"
   }
 }

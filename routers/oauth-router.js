@@ -16,7 +16,12 @@ router.get('/auth/github', passport.authenticate('github'));
 router.get('/auth/github/callback',
   passport.authenticate('github', {successRedirect: '/', failureRedirect: '/login'}));
 
-router.get('/auth/google', passport.authenticate('google'));
-router.get('/auth/google/callback',
-  passport.authenticate('google', {successRedirect: '/', failureRedirect: '/login'}));
+router.get('/auth/google-openid', passport.authenticate('google-openid'));
+router.get('/auth/google-openid/callback',
+  passport.authenticate('google-openid', {successRedirect: '/', failureRedirect: '/login'}));
+
+router.get('/auth/google-oauth', passport.authenticate('google-oauth'));
+router.get('/auth/google-oauth/callback',
+  passport.authenticate('google-oauth', {successRedirect: '/', failureRedirect: '/login'}));
+
 
