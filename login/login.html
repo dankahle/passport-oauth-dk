@@ -11,7 +11,7 @@
 <body ng-controller="ctrl">
 
 <h3>Login</h3>
-<!-- This will not work. The oauth code fails via xhr over access control, even though you're refering to your own site, it gets
+<!-- This doesn't work. The oauth code fails via xhr over access control, even though you're refering to your own site, it gets
 forwarded to another site and causes problems. It' not setup for that anyway as it involves 2 requests /auth/facebook and
 /auth/facebook/callback. Can't xhr something like that (fool). No matter, can use links for oauth and xhr for username/password
 <a href="" ng-click="oauth('facebook')">login via facebook xhr</a><br>
